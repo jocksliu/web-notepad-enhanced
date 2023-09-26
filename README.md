@@ -44,7 +44,7 @@ https://github.com/pereorga/minimalist-web-notepad 原项目作者 pereorga
 4、关于本文档变灰只读，您只需要在后台_TMP文件中将该文本设置成只读即可。
 5、本项目的图片、文件共享中，上传密码默认是Admin。
 
-<span style="color:red">**特别注意**</span>
+<span style="color:red">特别注意</span> 
 1、本项目的图片、文件共享中，上传密码的代码逻辑比较简单，请注意闲置服务器的空间容量，不要存储重要文件。
 2、本项目代码中，笔记的读写是公共可读写，请不要存放重要内容，该笔记设计的初衷是只是为了临时传输文本和文件，解决跨设备的问题。
 
