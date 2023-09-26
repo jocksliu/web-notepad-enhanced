@@ -1,38 +1,12 @@
-<a name="9ab5f918"></a>
 # 网页记事本增强版（web-notepad-enhanced）
 英文说明（English）|   中文说明（Chinese）<br />本项目是基于minimalist-web-notepad项目的代码进行二次增强开发。<br />（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.）
 
-<<<<<<< HEAD
 **原项目地址（Original project address）：**<br />https://github.com/pereorga/minimalist-web-notepad 原项目作者 pereorga<br />据作者README介绍，minimalist-web-notepad项目也是基于另外一个目前已不存在的项目 notepad.cc进行克隆开发。
 
-<a name="jXm7j"></a>
 ## 本项目截图
-=======
-本项目是基于minimalist-web-notepad项目的代码进行二次开发，新增笔记列表、随机笔记、文件共享、图片共享等几个功能
-（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.）
-
-原项目地址（Original project address）：
-https://github.com/pereorga/minimalist-web-notepad 原项目作者 pereorga
-据作者README介绍，minimalist-web-notepad项目也是基于另外一个目前已不存在的项目 notepad.cc进行克隆开发。
-
-**截图**
->>>>>>> 48a0e263fcaea8e8f53632ca89f7df9a9b3f4791
 ![ocr_20230925235125.png](https://cdn.nlark.com/yuque/0/2023/png/27433930/1695657090507-3913b736-5167-4108-845c-91c63042e575.png#averageHue=%23f3f3f3&clientId=ueeba5647-94c9-4&from=paste&height=955&id=BKGJ0&originHeight=955&originWidth=1040&originalType=binary&ratio=1&rotation=0&showTitle=false&size=65833&status=done&style=none&taskId=uab89d637-9aef-41fc-9f50-131d8e71f04&title=&width=1040)
 
-<a name="pzutL"></a>
 ## **功能特性（functional characteristics）**
-<<<<<<< HEAD
-=======
-
-**本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)
-**在线Dome：**[https://itdog.in](https://itdog.in)
-
-**【界面功能】**
-基本功能：你的互联网记事本，可以在不同设备中免应用进行文本、图片、文件传输，只需要一个浏览器。
-笔记：顾名思义，就是单纯的记事本，没有富文本等功能，只是文字记录的一个笔记，您在这里输入的内容将实时保存（除非你的wangl）。
-图册：用于上传共享一些图片，演示密码 Admin，当前Dome空间有限，目前策略为最大200K一张图。
-文件：用于上传共享一些文件，演示密码 Admin，当前Dome空间有限，目前策略为最大1MB一个文件。
->>>>>>> 48a0e263fcaea8e8f53632ca89f7df9a9b3f4791
 
 **本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**在线Dome：**[https://itdog.in](https://itdog.in)
 
@@ -44,35 +18,19 @@ https://github.com/pereorga/minimalist-web-notepad 原项目作者 pereorga
 
 **随机建一个：**<br />随机建个文档，文档地址规则为SJ-XXX，其中XXX是三位随机数
 
-<<<<<<< HEAD
 **刷新/保存：**<br />该按钮主要用于刷新文档，由于笔记本实时保存，其实没有主动保存的功能，只有刷新，为了安慰作者的一些保存系统，特地加了该功能，你也可以使用CTRL+S进行触发。
-=======
-**【其他功能】**
-1、在笔记页面,双击改行会自动出发网页Copy到剪切板的JS脚本，你在任意行双击，该行内容就已经自动复制到剪切板了，可以直接CTRL+V进行粘贴。(注释：必须SSL部署后才生效)
-2、图册上传的“粘贴板”功能，可以是一张图片，或者临时的微信QQ截图，直接粘贴到粘贴板即可。
-3、文件页面的显示二维码功能，可以帮助你快速生成二维码进行手机下载。
-4、关于本文档变灰只读，您只需要在后台_TMP文件中将该文本设置成只读即可。
-5、本项目的图片、文件共享中，上传密码默认是Admin。
-
-<span style="color:red">特别注意</span> 
-1、本项目的图片、文件共享中，上传密码的代码逻辑比较简单，请注意闲置服务器的空间容量，不要存储重要文件。
-2、本项目代码中，笔记的读写是公共可读写，请不要存放重要内容，该笔记设计的初衷是只是为了临时传输文本和文件，解决跨设备的问题。
-
->>>>>>> 48a0e263fcaea8e8f53632ca89f7df9a9b3f4791
 
 **收起/展开：**<br />这个功能主要为手机版而开发，由于手机的屏幕太小，默认左侧菜单会挤压主要输入区，当手机打开的时候默认收起，可以点击展开进行选择笔记。
 
 **【其他功能】**<br />1、在笔记页面,双击改行会自动出发网页Copy到剪切板的JS脚本，你在任意行双击，该行内容就已经自动复制到剪切板了，可以直接CTRL+V进行粘贴。(注释：必须SSL部署后才生效)<br />2、图册上传的“粘贴板”功能，可以是一张图片，或者临时的微信QQ截图，直接粘贴到粘贴板即可。<br />3、文件页面的显示二维码功能，可以帮助你快速生成二维码进行手机下载。<br />4、关于本文档变灰只读，您只需要在后台_TMP文件中将该文本设置成只读即可。
 
-**特别注意 （attention）**<br />1、本项目的图片、文件共享中，上传的加密密码的代码逻辑比较简单，请注意闲置服务器的空间容量，不要存储重要文件。 <br />2、本项目代码中，笔记的读写是公共可读写，请不要存放重要内容，该笔记设计的初衷是只是为了临时传输文本和文件，解决跨设备的问题。
+**================【特别注意 （attention）】================**<br />1、本项目的图片、文件共享中，上传的加密密码的代码逻辑比较简单，请注意闲置服务器的空间容量，不要存储重要文件。 <br />2、本项目代码中，笔记的读写是公共可读写，请不要存放重要内容，该笔记设计的初衷是只是为了临时传输文本和文件，解决跨设备的问题。 <br />====================================================
 
-<a name="Installation"></a>
-## 安装（Installation）
+## 安装（Installation） 
 本项目依赖Apache或者Nginx+PHP环境，请自行在服务器上部署对应的环境，默认主机空间和宝塔基本环境以及常用的网站环境都能满足要求。
 
 **步骤大纲（outline）：**<br />1、在Github上下载本项目代码<br />2、修改项目代码，把代码中的域名改成自己的域名<br />3、将代码上传到自己的主机空间或者服务器网站目录<br />4、简单配置网站环境变量，如nginx的伪静态或者Apache的mod_rewrite模块等<br />5、[可选]为你的域名网站申请一个SSL，当仅使用http直接部署的时候，可能会缺失部分功能，比如双击复制
 
-<a name="B0Uz0"></a>
 ### 详细部署教程（detailed steps）
 **1、克隆或者下载项目代码到你的本地**
 ```
@@ -108,7 +66,6 @@ location ~* ^/notes/([a-zA-Z0-9_-]+)$ {
 
 **Apache：**<br />如果你使用的是Apache，默认配置即可，<br />如有异常，需要确保在站点配置中启用mod_rewrite并设置.htaccess文件。参见如何为Apache设置mod_rewrite。[How To Set Up mod_rewrite for Apache](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04).
 
-<a name="Branches"></a>
 ## 许可证（licence）
 ```
 版权所有者：Jocksliu
@@ -117,6 +74,5 @@ Apache许可证 2.0（Apache License, Version 2.0）
 有关详细信息，请访问 http://www.apache.org/licenses/LICENSE-2.0。
 ```
 
-<a name="dbe884d0"></a>
 ## 谢鸣（Acknowledgements）:
 原作者： pereorga<br />原项目：https://github.com/pereorga/minimalist-web-notepad
