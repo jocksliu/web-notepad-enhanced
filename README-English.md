@@ -1,5 +1,5 @@
 # web-notepad-enhanced
-英文说明（English）|   [中文说明](https://github.com/jocksliu/web-notepad-enhanced/blob/main/README.md)（Chinese）<br />（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.）<br />Original project address：<br />https://github.com/pereorga/minimalist-web-notepad |  Original project author： pereorga
+English introduction（English）|   [中文说明](https://github.com/jocksliu/web-notepad-enhanced/blob/main/README.md)（Chinese）<br />（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.）<br />Original project address：<br />https://github.com/pereorga/minimalist-web-notepad |  Original project author： pereorga
 
 According to the author README, the minimalist-web-notepad project is also based on another now-defunct project notepad.cc clone development.
 
