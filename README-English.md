@@ -15,9 +15,9 @@ According to the author README, the minimalist-web-notepad project is also based
 
 **笔记（Notes）:** As the name suggests, it is simply a notepad, without features such as rich text, just a note for written records, and what you type here will be saved in real time (unless your network is terrible).
 
-**图册（Image book）: **Used to upload and share some pictures, demo password Admin, the current Dome space is limited, the current policy is a maximum of 200K a picture.
+**图册（Image book）: **Used to upload and share some pictures, demo password Admin, the current Dome space is limited, the current policy is a maximum of 200K a picture.The source code is set to a maximum of 5MB per graph.
 
-**文件（File）:** Used to upload and share some files, demo password Admin, the current Dome space is limited, the current policy is a maximum of 1MB file.
+**文件（File）:** Used to upload and share some files, demo password Admin, the current Dome space is limited, the current policy is a maximum of 1MB file.Source code is set to a maximum of 300MB per file.
 
 **Browser URL：**<br />At the URL, type any text and it will automatically create a text note you know, such as [http://itdog.in/README.](http://itdog.in/README.) The README here is what I manually wrote in the address bar. You can write “123” or whatever notebook address ID you want
 
