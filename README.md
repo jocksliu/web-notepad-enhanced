@@ -12,8 +12,10 @@ https://itdog.in
 ![ocr_20230925235125.png](https://cdn.nlark.com/yuque/0/2023/png/27433930/1695657090507-3913b736-5167-4108-845c-91c63042e575.png#averageHue=%23f3f3f3&clientId=ueeba5647-94c9-4&from=paste&height=955&id=BKGJ0&originHeight=955&originWidth=1040&originalType=binary&ratio=1&rotation=0&showTitle=false&size=65833&status=done&style=none&taskId=uab89d637-9aef-41fc-9f50-131d8e71f04&title=&width=1040)
 
 ## **功能特性（functional characteristics）**
+
 **本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)
 **在线Dome：**[https://itdog.in](https://itdog.in)
+
 **【界面功能】**
 基本功能：你的互联网记事本，可以在不同设备中免应用进行文本、图片、文件传输，只需要一个浏览器。
 笔记：顾名思义，就是单纯的记事本，没有富文本等功能，只是文字记录的一个笔记，您在这里输入的内容将实时保存（除非你的wangl）。
