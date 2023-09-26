@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES["fileToUpload"])) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Jocks临时文件</title>
+<title>临时文件</title>
     <style>
 body {
   display: flex;
