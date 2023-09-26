@@ -1,7 +1,7 @@
 # 网页记事本增强版（web-notepad-enhanced）
   [English introduction](https://github.com/jocksliu/web-notepad-enhanced/blob/main/README-English.md)（English）|   中文说明（Chinese）<br />
     -------------------------------------------------------------<br />
-  本项目是基于minimalist-web-notepad项目的代码进行二次增强开发。<br />（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.） 
+  本项目是基于minimalist-web-notepad项目的代码进行二次开发。<br />（This project is based on the code of the minimalist-web-notepad project for secondary enhancement development.） 
 
 **原项目地址（Original project address）：**<br />https://github.com/pereorga/minimalist-web-notepad 原项目作者 pereorga<br />据作者README介绍，minimalist-web-notepad项目也是基于另外一个目前已不存在的项目 notepad.cc进行克隆开发。
 
