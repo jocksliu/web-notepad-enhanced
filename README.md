@@ -14,7 +14,7 @@
 
 ## **功能特性（functional characteristics）**
 
-**本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**在线Dome：**[https://itdog.in](https://itdog.in)
+**本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**在线Demo：**[https://itdog.in](https://itdog.in)
 
 **【界面功能】**<br />基本功能：你的互联网记事本，可以在不同设备中免应用进行文本、图片、文件传输，只需要一个浏览器。<br />笔记：顾名思义，就是单纯的记事本，没有富文本等功能，只是文字记录的一个笔记，您在这里输入的内容将实时保存（除非你的wangl）。<br />图册：用于上传共享一些图片，演示密码 Admin，当前Dome空间有限，目前策略为最大200K一张图。源代码设置为5M一张图<br />文件：用于上传共享一些文件，演示密码 Admin，当前Dome空间有限，目前策略为最大1MB一个文件，源代码设置为300M一个文件。
 
