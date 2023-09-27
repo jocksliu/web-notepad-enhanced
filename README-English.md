@@ -39,14 +39,14 @@ The naming rule of the menu on the left side of the face is: notebook address + 
 
 4. For this document to become read-only, you only need to set the text to read-only in the background _TMP file.
 
-**特别注意 （attention）**<br />**1. In the picture and file sharing of this project, the code logic of the uploaded encryption password is relatively simple. Please pay attention to the space capacity of the idle server and do not store important files.**
+**attention**<br />**1. In the picture and file sharing of this project, the code logic of the uploaded encryption password is relatively simple. Please pay attention to the space capacity of the idle server and do not store important files.**
 
 **2. In the code of this project, the reading and writing of notes are public, so please do not store important content. The original intention of the note design is only to temporarily transfer text and files to solve cross-device problems.**
 
-## 安装（Installation）
+## Installation
 This project depends on Apache or Nginx+PHP environment, please deploy the corresponding environment on the server, the default host space, the basic environment of the pagoda and the common website environment can meet the requirements.
 
-**步骤大纲（outline）：**<br />1. Download the project code on Github<br />2. Modify the project code and change the domain name in the code to your own domain name<br />3. Upload the code to your own host space or server website directory<br />4. Simple configuration of website environment variables, such as pseudo-static nginx or mod_rewrite module of Apache<br />5, [Optional] For your domain website to apply for an SSL, when only using http directly deployed, may be missing some features, such as double click copy
+**outline：**<br />1. Download the project code on Github<br />2. Modify the project code and change the domain name in the code to your own domain name<br />3. Upload the code to your own host space or server website directory<br />4. Simple configuration of website environment variables, such as pseudo-static nginx or mod_rewrite module of Apache<br />5, [Optional] For your domain website to apply for an SSL, when only using http directly deployed, may be missing some features, such as double click copy
 
 ### detailed steps
 **1、Clone or download the project code to your local location**
@@ -65,8 +65,8 @@ The following variables are in the first few lines of code in the file, open to 
 ```bash
 $base_url = 'http://itdog.in';
 改成
-$base_url = 'https://你的域名';
-//默认http，如果使用了SSL，则需要使用https
+$base_url = 'https://Your.domain.name';
+//The default is http. If SSL is used, https is required
 ```
 
 **3、Upload the code to the site root directory to ensure configuration.**<br />Upload all the modified code to your website directory, and then make sure that the configuration is correct, it is recommended to package into zip and then upload and decompress.<br />Most of the host space and server environments do not need to be configured. You only need to check them. If any exception occurs, modify it yourself.
@@ -89,7 +89,7 @@ location ~* ^/notes/([a-zA-Z0-9_-]+)$ {
 
 **Apache：**<br />If you are using Apache, the default configuration is fine.<br />If an exception occurs, ensure that mod_rewrite is enabled in the site configuration and the.htaccess file is configured. See How Do I Set up for Apachemod_rewrite。[How To Set Up mod_rewrite for Apache](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04).
 
-## 许可证（licence）
+## licence
 ```
 Copyright holder: Jocksliu
 
@@ -100,5 +100,5 @@ For more information, please visit http://www.apache.org/licenses/LICENSE-2.0.
 Author blog：https://jocksliu.com
 ```
 
-## 谢鸣（Acknowledgements）:
+## Acknowledgements
 Original author: pereorga<br />The original project: [https://github.com/pereorga/minimalist-web-notepad](https://github.com/pereorga/minimalist-web-notepad)
