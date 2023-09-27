@@ -9,7 +9,7 @@ According to the author README, the minimalist-web-notepad project is also based
 ![1695702744.png](https://jks-1251624037.cos.ap-nanjing.myqcloud.com/ocr-2022-8-9//1695702744.png#averageHue=%23f3f3f3&clientId=ueeba5647-94c9-4&from=paste&height=955&id=BKGJ0&originHeight=955&originWidth=1040&originalType=binary&ratio=1&rotation=0&showTitle=false&size=65833&status=done&style=none&taskId=uab89d637-9aef-41fc-9f50-131d8e71f04&title=&width=1040) 
 ## **functional characteristics**
 
-**Address of this item：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**Dome：**[https://itdog.in](https://itdog.in)
+**Address of this item：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**Demo：**[https://itdog.in](https://itdog.in)
 
 **【Interface function】**<br />**Basic functions: **Your Internet notepad, which can transfer text, pictures, and files between different devices without application, only requires a browser.
 
