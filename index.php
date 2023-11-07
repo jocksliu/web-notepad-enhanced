@@ -338,9 +338,9 @@ document.getElementById("content").addEventListener("input", updateNoteTitle);
         }
     </style>
     <ul class="breadcrumb">
-        <li><a href=   <?php $base_url ?>/>笔记</a></li>
-        <li><a href= <?php $base_url ?>/png.php>图册</a></li>
-        <li><a href= <?php $base_url ?>"/file.php">文件</a></li>
+        <li><a href="<?php echo $base_url; ?>/">笔记</a></li>
+        <li><a href="<?php echo $base_url; ?>/png.php">图册</a></li>
+        <li><a href="<?php echo $base_url; ?>/file.php">文件</a></li>
     </ul>
 
             <ul id="noteList">
