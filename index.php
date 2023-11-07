@@ -356,7 +356,7 @@ foreach ($noteList as $noteId) {
 <button onclick="location.reload()" style="float: right;">刷新/保存</button>
 <li><a href="<?php print $base_url . '/SJ-' . substr(str_shuffle('1234579'), -3); ?>">随机建一个</a></li>
 <li><a href="https://github.com/jocksliu/web-notepad-enhanced">本项目Github地址</a></li>
-<a href="?logout">注销</a>
+<a href="/?logout">注销</a>
 
 
 
