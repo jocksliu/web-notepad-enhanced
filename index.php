@@ -4,9 +4,38 @@
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
 /* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
+ 
+
+$password = '131'; // 你应该为这个密码使用哈希值
+session_start(); // 开始或恢复会话
+
+// 如果用户提交了密码
+if (isset($_POST['password'])) {
+    if ($_POST['password'] === $password) { // 在生产环境中使用password_verify()
+        $_SESSION['authenticated'] = true;
+        header('Location: ' . $_SERVER['PHP_SELF']); // 重定向到当前页面
+        exit;
+    } else {
+        $error = '密码错误!';
+    }
+}
+
+// 如果用户没有通过认证
+if (!isset($_SESSION['authenticated'])) {
+    include 'login.php'; // 这应该是一个包含登录表单的单独的PHP文件
+    exit; // 停止进一步执行
+}
+
+// 如果用户点击了注销链接
+if (isset($_GET['logout'])) {
+    unset($_SESSION['authenticated']); // 删除认证标记
+    session_destroy(); // 销毁会话
+    header('Location: ' . $_SERVER['PHP_SELF']); // 重定向到当前页面
+    exit;
+}
 
 // Base URL of the website, without trailing slash.
-$base_url = 'http://itdog.in';
+$base_url = 'https://itdog.in';
 
 // Path to the directory to save the notes in, without trailing slash.
 // Should be outside of the document root, if possible.
@@ -331,6 +360,7 @@ foreach ($noteList as $noteId) {
 <button onclick="location.reload()" style="float: right;">刷新/保存</button>
 <li><a href="<?php print $base_url . '/SJ-' . substr(str_shuffle('1234579'), -3); ?>">随机建一个</a></li>
 <li><a href="https://github.com/jocksliu/web-notepad-enhanced">本项目Github地址</a></li>
+<a href="?logout">注销</a>
 
 
 
