@@ -61,7 +61,7 @@
         <?php endif; ?>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             <div class="form-input">
-                <input type="password" id="password" name="password" placeholder="输入密码">
+                <input type="password" id="password" name="password" placeholder="输入密码(初始密码123)">
             </div>
             <div class="form-input">
                 <button type="submit">登录</button>
