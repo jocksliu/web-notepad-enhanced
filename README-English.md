@@ -69,6 +69,8 @@ $base_url = 'https://Your.domain.name';
 //The default is http. If SSL is used, https is required
 ```
 
+Change the password of the main page. Change the $password = 'xxx' in the index.php file. Change xxx to the password you want to set
+
 **3、Upload the code to the site root directory to ensure configuration.**<br />Upload all the modified code to your website directory, and then make sure that the configuration is correct, it is recommended to package into zip and then upload and decompress.<br />Most of the host space and server environments do not need to be configured. You only need to check them. If any exception occurs, modify it yourself.
 
 - Make sure your home page file is set to index.php
