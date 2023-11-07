@@ -4,8 +4,9 @@
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
 /* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
- 
-$password = '131';
+
+/* 页面初始密码，自行部署请修改成自己的密码 */
+$password = '123';
 session_start();
 
 if (isset($_POST['password'])) {
@@ -30,27 +31,18 @@ if (isset($_GET['logout'])) {
     exit;
 }
 
-// Base URL of the website, without trailing slash.
+/* 网站域名，自行部署请修改成自己的域名 */
 $base_url = 'https://itdog.in';
 
-// Path to the directory to save the notes in, without trailing slash.
-// Should be outside of the document root, if possible.
 $save_path = '_tmp';
 
-// Disable caching.
 header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
 
-// If no name is provided or it contains invalid characters or it is too long.
 if (!isset($_GET['note']) || !preg_match('/^[a-zA-Z0-9_-]+$/', $_GET['note']) || strlen($_GET['note']) > 64) {
 
-    // Generate a name with 5 random unambiguous characters. Redirect to it.
-    //header("Location: $base_url/" . substr(str_shuffle('234579abcdefghjkmnpqrstwxyz'), -5));
-    //header("Location: $base_url/" . "123");
     header("Location: $base_url/" . date('Y-m'));
-    //    header("Location: $base_url/" . date('Y-m-d'));
-
     die;
 }
 
@@ -58,17 +50,14 @@ $path = $save_path . '/' . $_GET['note'];
 
 if (isset($_POST['text'])) {
 
-    // Update file.
     file_put_contents($path, $_POST['text']);
 
-    // If provided input is empty, delete file.
     if (!strlen($_POST['text'])) {
         unlink($path);
     }
     die;
 }
 
-//Print raw file if the client is curl, wget, or when explicitly requested.
 if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || strpos($_SERVER['HTTP_USER_AGENT'], 'Wget') === 0) {
     if (is_file($path)) {
         header('Content-type: text/plain');
