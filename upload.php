@@ -1,5 +1,4 @@
 <?php
-/* Minimalist Web Notepad | https://github.com/pereorga/minimalist-web-notepad */
 /* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
