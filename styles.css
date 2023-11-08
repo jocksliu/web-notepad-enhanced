@@ -1,4 +1,3 @@
-/* Minimalist Web Notepad | https://github.com/pereorga/minimalist-web-notepad */
 /* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
@@ -9,6 +8,7 @@ body {
     margin: 0;
     background: #ebeef1;
 }
+
 .container {
     position: absolute;
     top: 20px;
@@ -16,6 +16,7 @@ body {
     bottom: 20px;
     left: 20px;
 }
+
 #content {
     font-size: 100%;
     margin: 0;
@@ -29,6 +30,7 @@ body {
     border: 1px #ddd solid;
     outline: none;
 }
+
 #printable {
     display: none;
 }
@@ -37,6 +39,7 @@ body {
     body {
         background: #383934;
     }
+
     #content {
         background: #282923;
         color: #f8f8f2;
@@ -48,9 +51,201 @@ body {
     .container {
         display: none;
     }
+
     #printable {
         display: block;
         white-space: pre-wrap;
         word-break: break-word;
     }
+}
+
+/* styles1 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    background-color: white;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    transition: width 0.5s;
+
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    cursor: pointer;
+    padding: 5px 0;
+    padding-left: 10px;
+}
+
+.menu ul li:hover {
+    text-decoration: underline;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 10px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    transition: margin-left 0.5s, width 0.5s;
+    cursor: text;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+
+ul.breadcrumb li a {
+    color: green;
+}
+
+.active {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.submenu {
+    display: block;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li:hover {
+    text-decoration: underline;
+}
+
+.expandable-menu {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.expandable-menu:hover {
+    text-decoration: underline;
+}
+
+@keyframes cool-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#toggle-menu {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s;
+}
+
+#toggle-menu:hover {
+    background: #0056b3;
+}
+
+#my-menu {
+    transition: width 0.5s;
+}
+
+#app {
+    display: flex;
+}
+
+li.readonly {
+    color: lightgray;
+}
+
+
+/* styles2 */
+.breadcrumb {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.breadcrumb li {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.breadcrumb li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.breadcrumb li a:active {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.breadcrumb li a:focus {
+    outline: none;
+}
+
+.floating-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 18px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
 }
