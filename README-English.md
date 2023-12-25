@@ -69,7 +69,13 @@ $base_url = 'https://Your.domain.name';
 //The default is http. If SSL is used, https is required
 ```
 
-Change the password of the main page. Change the $password = 'xxx' in the index.php file. Change xxx to the password you want to set
+Change Home Page Password
+To modify the password, edit the index.php file:
+$password = 'xxx';
+Replace 'xxx' with the password you want to set.
+In versions after v1.0.4, a hash value is used instead of a plain text password. The logic remains the same. You can use an online tool to convert your password into a hash value, and then fill in the following field:
+$hashed_password = 'xxx';
+/* Recommended online hash generation websites: https://uutool.cn/php-password/ or https://toolkk.com/tools/php-password-hash or you can use other tools found via Baidu, Google, etc. */
 
 **3、Upload the code to the site root directory to ensure configuration.**<br />Upload all the modified code to your website directory, and then make sure that the configuration is correct, it is recommended to package into zip and then upload and decompress.<br />Most of the host space and server environments do not need to be configured. You only need to check them. If any exception occurs, modify it yourself.
 
