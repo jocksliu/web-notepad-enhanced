@@ -54,19 +54,27 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>登录</h2>
-        <?php if (isset($error)): ?>
-            <p class="error"><?php echo $error; ?></p>
-        <?php endif; ?>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-            <div class="form-input">
-                <input type="password" id="password" name="password" placeholder="输入密码(初始密码123)">
+    <div class="main-container">
+        <div class="logo">记事本</div>
+        <div class="login-container">
+            <?php if (isset($error)): ?>
+            <div class="error">
+                <?php echo htmlspecialchars($error); ?>
             </div>
-            <div class="form-input">
-                <button type="submit">登录</button>
-            </div>
-        </form>
+            <?php endif; ?>
+            <form method="post"  action="index.php">
+                <div class="form-input">
+                    <input type="password" id="password" name="password" placeholder="输入密码">
+                </div>
+                <div class="form-input">
+                    <button type="submit">登录</button>
+                </div>
+                <div class="remember-me-container">
+                    <input type="checkbox" name="remember_me" id="remember_me">
+                    <label for="remember_me">保持登录7天</label>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
