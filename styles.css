@@ -249,3 +249,8 @@ li.readonly {
     font-size: 16px;
     color: red;
 }
+
+.remember-me-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+}
