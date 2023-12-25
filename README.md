@@ -55,7 +55,10 @@ $base_url = 'https://你的域名';
 **修改主页密码**
 修改index.php文件的 
 ```$password = 'xxx';```
-把xxx改成你想要设置的密码
+把xxx改成你想要设置的密码；
+在v1.0.4之后的版本，使用了哈希值代替明文密码，逻辑一致，可以使用在线工具将你的密码转换成哈希值之后，填入以下字段
+```$hashed_password = 'xxx';```
+/* 推荐的在线生成哈希值网站：https://uutool.cn/php-password/  或者 https://toolkk.com/tools/php-password-hash 或者其他自行百度谷歌 */
 
 
 
