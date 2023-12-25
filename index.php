@@ -3,13 +3,25 @@
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
 /* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
- 
-/* 将这个密码改成自己的登录密码 */
-$password = '123';
+
+/* 在这个版本中，密码使用了哈希值，增加了安全性，建议搜索在线php哈希生成工具直接生成密码的哈希值，然后填入哈希内容 */
+/* 推荐的在线生成哈希值网站：https://uutool.cn/php-password/  或者 https://toolkk.com/tools/php-password-hash 或者其他自行百度谷歌 */
+/* 将这个密码改成自己的登录密码的哈希值，当前哈希值对应的密码是123 */
+$hashed_password = '$2y$10$AaYc8IsPTupunq16p6pU/ebzAQu7PEZSrhncp5ygwt7gXePBh5H/6';
+
+$session_time = 3600; // 3600秒
+
+if (isset($_POST['remember_me'])) {
+    $session_time = 604800; // 604800秒
+}
+
+ini_set('session.gc_maxlifetime', $session_time);
+session_set_cookie_params($session_time);
+
 session_start();
 
 if (isset($_POST['password'])) {
-    if ($_POST['password'] === $password) {
+    if (password_verify($_POST['password'], $hashed_password)) {
         $_SESSION['authenticated'] = true;
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit;
@@ -23,13 +35,16 @@ if (!isset($_SESSION['authenticated'])) {
     exit; 
 }
 
-
 if (isset($_GET['logout'])) {
-    unset($_SESSION['authenticated']); 
-    session_destroy(); 
-    header('Location: ' . $_SERVER['PHP_SELF']); 
+    session_unset();
+    session_destroy();
+    if (isset($_COOKIE[session_name()])) {
+        setcookie(session_name(), '', time() - 3600, '/');
+    }
+    header('Location: login.php');
     exit;
 }
+
 
 /* 将域名改成自己的部署域名，否则将自动跳转到Demo域名 */
 $base_url = 'https://itdog.in';
