@@ -59,7 +59,7 @@ $base_url = 'https://你的域名';
 <br />
 <br />在v1.0.4之后的版本，使用了哈希值代替明文密码，逻辑一致，可以使用在线工具将你的密码转换成哈希值之后，填入以下字段
 <br />```$hashed_password = 'xxx';```
-<br />/* 推荐的在线生成哈希值网站：https://uutool.cn/php-password/  或者 https://toolkk.com/tools/php-password-hash 或者其他自行百度谷歌 */
+<br /> 推荐的在线生成哈希值网站：https://uutool.cn/php-password/  或者 https://toolkk.com/tools/php-password-hash 或者其他自行百度谷歌 
 
 
 
