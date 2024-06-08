@@ -7,7 +7,7 @@
 
 **本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**在线Demo：**[https://itdog.in](https://itdog.in)
 
-**【核心三大功能】**<br />网络笔记本：基于web互联网的记事本，默认无需登录，网络正常的情况下可以实时保存，集成伪富文本功能，丰富内容表现。<br />图册：用于上传共享一些图片。源代码设置为5M一张图<br />文件：用于上传共享一些文件。
+**【主要功能】**<br />**网络笔记本**：基于web互联网的记事本，默认无需登录，网络正常的情况下可以实时保存，集成伪富文本功能，丰富内容表现。<br />**图册**：用于上传共享一些图片。源代码设置为5M一张图<br />**文件**：用于上传共享一些文件。
 
 **浏览器URL：**<br />在URL上，输入任意文本，将自动创建一个你知道的文本笔记，如 [http://itdog.in/README](http://itdog.in/README)，这里的README是我手动在地址栏里写入的，你可以写入123或者其他想要起的笔记本地址ID
 
