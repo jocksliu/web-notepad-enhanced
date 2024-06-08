@@ -1,19 +1,14 @@
-<?php session_start(); 
-$correct_password = 'Admin'; 
-if (isset($_POST['password'])) {
-    if ($_POST['password'] === $correct_password) {
-        $_SESSION['authenticated'] = true;
-        header('Location: ' . $_SERVER['REQUEST_URI']);
-        exit; 
-    }
-}
-$base_url = 'https://www.muv.cc';
-/* Minimalist Web Notepad | https://github.com/pereorga/minimalist-web-notepad */
-/* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
-/* https://github.com/jocksliu/web-notepad-enhanced  */
-/* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
-/* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
-?>
+/*<?php session_start(); // 启动会话
+// #$correct_password = '123'; // 在这里设置你的密码
+
+// if (isset($_POST['password'])) {
+//     if ($_POST['password'] === $correct_password) {
+//         $_SESSION['authenticated'] = true;
+//         header('Location: ' . $_SERVER['REQUEST_URI']); // 添加这一行来进行重定向
+//         exit; // 结束脚本执行
+//     }
+// }
+// ?>*/
 
 <!DOCTYPE html>
 <html>
@@ -21,23 +16,23 @@ $base_url = 'https://www.muv.cc';
     <title>Jocks临时图片</title>
 <style>
     img {
-        width: 150px; 
+        width: 150px; /* 调整这个值来设置图片大小 */
         height: auto;
-        box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.3); 
+        box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.3); /* 为图片添加边框阴影 */
     }
     .image-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-around; /* 设置为 center, space-between 或其他值以调整对齐方式 */
         align-items: center;
         gap: 10px;
     }
-   
+    /* 全局样式调整 */
     body {
         font-family: Arial, sans-serif;
     }
 
-
+    /* 按钮样式 */
     .button {
         display: inline-block;
         padding: 10px 20px;
@@ -79,9 +74,9 @@ $base_url = 'https://www.muv.cc';
             font-size: 14px;
         }
     }
-    @media (max-width: 480px) { 
+    @media (max-width: 480px) { /* 调整此处的屏幕宽度阈值以适应不同设备 */
         button {
-            font-size: 18px; 
+            font-size: 18px; /* 根据需要调整按钮的大小 */
         }
     }
 
@@ -180,7 +175,7 @@ $base_url = 'https://www.muv.cc';
         }
     </style>
     <ul class="breadcrumb">
-    <li><a href=   <?php $base_url ?>/ >笔记</a></li>
+        <li><a href=   <?php $base_url ?>/ >笔记</a></li>
         <li><a href= <?php $base_url ?>/png.php>图册</a></li>
         <li><a href= <?php $base_url ?>"/file.php">文件</a></li>
     </ul>
@@ -190,18 +185,6 @@ $base_url = 'https://www.muv.cc';
 
 
 <h1>图册上传</h1>
-<?php if (!isset($_SESSION['authenticated'])): ?>
-    <div class="alert alert-warning" role="alert">
-        请输入密码以解锁上传功能
-    </div>
-    <form action="" method="post">
-        <div class="form-group">
-            <label for="password" style="font-weight: bold;">密码:</label>
-            <input type="password" name="password" id="password" class="form-control" style="width: 200px;">
-        </div>
-        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">解锁上传功能</button>
-    </form>
-<?php else: ?>
     <input type="file" accept="image/*" id="fileInput" style="display: none;">
     <button onclick="openFilePicker()" class="button button-primary">选择文件</button>
     <input type="file" accept="image/*" capture="camera" id="cameraInput" style="display: none;">
@@ -211,7 +194,6 @@ $base_url = 'https://www.muv.cc';
     <button onclick="uploadImage()" class="button button-primary" style="display: none;">确认并上传</button>
     <span id="file-name"></span>
     <div id="message"></div>
-<?php endif; ?>
 
     <script>
         var imageFile;
@@ -220,11 +202,11 @@ $base_url = 'https://www.muv.cc';
 var cameraInput = document.getElementById('cameraInput');
 cameraInput.addEventListener('change', function () {
     imageFile = cameraInput.files[0];
-    if (imageFile) {  
+    if (imageFile) {  // 确保拍摄了照片
         var fileName = imageFile.name;
         var message = document.getElementById('message');
         message.innerHTML = '已选择文件: ' + fileName;
-        uploadImage();
+        uploadImage(); // 拍照完成后立即上传
     }
 });
 
@@ -238,6 +220,7 @@ function openCamera() {
                 return;
             }
 
+            // 检查文件大小和类型
             if (imageFile.size > 5*1024*1024) {
                 message.innerHTML = '文件过大，必须小于5MB';
                 return;
@@ -256,7 +239,7 @@ function openCamera() {
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     message.innerHTML = '图片上传成功';
-                    location.reload(); 
+                    location.reload(); // 刷新页面以显示新上传的图片
                 } else {
                     message.innerHTML = '图片上传失败：' + xhr.responseText;
                 }
@@ -286,6 +269,7 @@ function uploadFile() {
         return;
     }
 
+    // 上传文件的相关逻辑
     var formData = new FormData();
     formData.append('image', selectedFile);
 
@@ -294,7 +278,7 @@ function uploadFile() {
     xhr.onload = function () {
         if (xhr.status === 200) {
             message.innerHTML = '文件上传成功';
-            location.reload(); 
+            location.reload(); // 刷新页面以显示新上传的文件
         } else {
             message.innerHTML = '文件上传失败：' + xhr.responseText;
         }
@@ -337,7 +321,7 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
 });
 
     function copyImageLink(e) {
-        e.stopPropagation(); 
+        e.stopPropagation(); // 阻止事件冒泡，防止触发关闭灯箱
         var imageSrc = document.getElementById('lightbox-img').src;
         navigator.clipboard.writeText(imageSrc).then(function() {
             alert("复制成功！");
@@ -347,7 +331,7 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
     }
 
     function deleteImage(e) {
-        e.stopPropagation(); 
+        e.stopPropagation(); // 阻止事件冒泡，防止触发关闭灯箱
         var imageSrc = document.getElementById('lightbox-img').src;
         var imageName = imageSrc.substring(imageSrc.lastIndexOf('/') + 1);
 
@@ -357,7 +341,7 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
         xhr.onload = function () {
             if (xhr.status === 200) {
                 alert('图片删除成功');
-                location.reload(); 
+                location.reload(); // 刷新页面以显示删除后的图片列表
             } else {
                 alert('图片删除失败：' + xhr.responseText);
             }
@@ -370,7 +354,7 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span id="close">&times;</span>
   <img id="lightbox-img" class="lightbox-image">
-  <div id="lightbox-controls"> 
+  <div id="lightbox-controls"> <!-- 新增的控制按钮容器 -->
     <button class="button button-secondary" onclick="copyImageLink(event)">复制图片链接</button>
 <?php if (isset($_SESSION['authenticated'])): ?>
     <button class="button button-secondary" onclick="deleteImage(event)">删除图片</button>
@@ -380,17 +364,17 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
 </div>
     <div class="image-container">
 <?php
-    $image_directory = '_png/'; 
-    $thumb_directory = '_png/thumbnails/'; 
-    $images = glob($thumb_directory . '*.{jpg,jpeg,png,gif}', GLOB_BRACE); 
+    $image_directory = '_png/'; // 原图路径
+    $thumb_directory = '_png/thumbnails/'; // 缩略图路径
+    $images = glob($thumb_directory . '*.{jpg,jpeg,png,gif}', GLOB_BRACE); // 使用缩略图路径
     usort($images, function($a, $b) {
          return filemtime($a) < filemtime($b);
     });
 
     foreach ($images as $index => $image) {
-        $original_image = str_replace("thumbnails/", "", $image); 
+        $original_image = str_replace("thumbnails/", "", $image); // 找到对应的原图
         echo '<div class="image-wrapper">';
-        echo '<img src="' . $image . '" alt="Image" onclick="openLightbox(\'' . $original_image . '\')">'; 
+        echo '<img src="' . $image . '" alt="Image" onclick="openLightbox(\'' . $original_image . '\')">'; // 缩略图用于展示，原图用于灯箱
         echo '</div>';
     }
 ?>
@@ -489,6 +473,7 @@ function confirmPaste() {
     return;
   }
 
+  // 上传图片的相关逻辑
   var formData = new FormData();
   formData.append('image', pastedImage);
 
@@ -497,7 +482,7 @@ function confirmPaste() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById('message').innerHTML = '图片上传成功';
-      location.reload(); 
+      location.reload(); // 刷新页面以显示新上传的图片
     } else {
       document.getElementById('message').innerHTML = '图片上传失败：' + xhr.responseText;
     }
@@ -521,8 +506,5 @@ function confirmPaste() {
             color: red;
         }
    </style>
-<div class="floating-notice">
-    本网站提供公网访问，主要方便管理员和身边的人员使用，网站空间有限，当前图片单文件最大5M，网站空间超过800M管理员自动清空，请注意保存。
-  </div>
 </body>
 </html>
