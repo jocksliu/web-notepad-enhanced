@@ -1,7 +1,7 @@
 <?php
 $imageName = $_POST['imageName'];
-$image_directory = '_png/';
-$thumb_directory = '_png/thumbnails/';
+$image_directory = '_png/'; // 图片存储目录，根据实际情况修改
+$thumb_directory = '_png/thumbnails/'; // 缩略图存储目录，根据实际情况修改
 $file_to_delete = $image_directory . $imageName;
 $thumb_to_delete = $thumb_directory . $imageName;
 
