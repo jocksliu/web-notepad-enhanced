@@ -1,65 +1,4 @@
-/* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
-/* https://github.com/jocksliu/web-notepad-enhanced  */
-/* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
-/* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
-
-
-body {
-    margin: 0;
-    background: #ebeef1;
-}
-
-.container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
-}
-
-#content {
-    font-size: 100%;
-    margin: 0;
-    padding: 20px;
-    overflow-y: auto;
-    resize: none;
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    box-sizing: border-box;
-    border: 1px #ddd solid;
-    outline: none;
-}
-
-#printable {
-    display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #383934;
-    }
-
-    #content {
-        background: #282923;
-        color: #f8f8f2;
-        border: 0;
-    }
-}
-
-@media print {
-    .container {
-        display: none;
-    }
-
-    #printable {
-        display: block;
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-}
-
-/* styles1 */
+/* 全局样式 */
 * {
     box-sizing: border-box;
 }
@@ -67,9 +6,74 @@ body {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: #ebeef1;
 }
 
-.menu {
+/* 容器样式 */
+.container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 960px;
+    min-width: 320px;
+    position: relative;
+}
+
+#content::first-line {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
+.toolbar {
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% + 150px); /* 假设左侧菜单栏的宽度为 200px */
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #333333;
+    transition: color 0.3s;
+}
+
+.toolbar button:hover {
+    color: #007bff;
+}
+
+
+/* 菜单样式 */
+.top-menu {
     position: fixed;
     left: 0;
     top: 0;
@@ -79,45 +83,31 @@ body {
     border-right: 1px solid #ccc;
     padding: 10px;
     overflow-y: auto;
-    transition: width 0.5s;
-
+    transition: transform 0.5s;
+    transform: translateX(0);
 }
 
-.menu ul {
+.bottom-aligned {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.top-menu ul {
     list-style-type: none;
     padding: 0;
 }
 
-.menu ul li {
+.top-menu ul li {
     cursor: pointer;
     padding: 5px 0;
     padding-left: 10px;
 }
 
-.menu ul li:hover {
+.top-menu ul li:hover {
     text-decoration: underline;
-}
-
-.content {
-    margin-left: 250px;
-    padding: 10px;
-    height: 100vh;
-    width: calc(100% - 250px);
-    transition: margin-left 0.5s, width 0.5s;
-    cursor: text;
-}
-
-textarea {
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    resize: none;
-}
-
-
-ul.breadcrumb li a {
-    color: green;
 }
 
 .active {
@@ -125,80 +115,11 @@ ul.breadcrumb li a {
     font-weight: bold;
 }
 
-.submenu {
-    display: block;
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-.submenu li {
-    padding: 5px 0;
-}
-
-.submenu li:hover {
-    text-decoration: underline;
-}
-
-.expandable-menu {
-    cursor: pointer;
-    padding: 5px 0;
-}
-
-.expandable-menu:hover {
-    text-decoration: underline;
-}
-
-@keyframes cool-gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-#toggle-menu {
-    position: fixed;
-    left: 50%;
-    bottom: 10px;
-    transform: translateX(-50%);
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    background: #007BFF;
-    color: white;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    transition: background 0.3s;
-}
-
-#toggle-menu:hover {
-    background: #0056b3;
-}
-
-#my-menu {
-    transition: width 0.5s;
-}
-
-#app {
-    display: flex;
-}
-
 li.readonly {
     color: lightgray;
 }
 
-
-/* styles2 */
+/* 面包屑导航样式 */
 .breadcrumb {
     list-style: none;
     padding: 10px;
@@ -238,6 +159,142 @@ li.readonly {
     outline: none;
 }
 
+/* 内容区域样式 */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+    padding-left: 50px; /* 为行号留出空间 */
+    margin-left: 240px;
+    transition: margin-left 0.5s;
+    position: relative;
+}
+
+#line-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    padding: 20px 0;
+    text-align: right;
+    font-family: monospace;
+    color: #999;
+}
+
+#status-bar {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+/* 按钮容器样式 */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-container button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-container button:hover {
+    background-color: #e0e0e0;
+}
+
+/* 颜色选择器样式 */
+.color-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-selector select {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 注销链接样式 */
+.logout-link {
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* 应用容器样式 */
+#app {
+    display: flex;
+}
+
+/* 消息框样式 */
+#message-box {
+    position: fixed;
+    bottom: 70px;
+    left: calc(50% + 150px);
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 9999;
+    font-size: 16px;
+    text-align: center;
+    min-width: 200px;
+}
+
+#message-box.show {
+    opacity: 1;
+}
+
+/* 可扩展菜单样式 */
+.expandable-menu {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.expandable-menu:hover {
+    text-decoration: underline;
+}
+
+.submenu {
+    display: block;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li:hover {
+    text-decoration: underline;
+}
+
+/* 浮动提示样式 */
 .floating-notice {
     position: fixed;
     bottom: 0;
@@ -250,7 +307,91 @@ li.readonly {
     color: red;
 }
 
+/* 记住我容器样式 */
 .remember-me-container {
     display: flex;
-    align-items: center; /* 垂直居中对齐 */
+    align-items: center;
+}
+
+/* 可打印内容样式 */
+#printable {
+    display: none;
+}
+
+@media print {
+    .container {
+        display: none;
+    }
+
+    #printable {
+        display: block;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+}
+
+/* 暗色模式样式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #383934;
+    }
+
+    #content {
+        background: #282923;
+        color: #f8f8f2;
+        border: 0;
+    }
+}
+
+#noteList {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+#noteList li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#noteList li.active {
+    background-color: #e0e0e0;
+    /* 设置选中项的背景色 */
+    font-weight: bold;
+    /* 保留加粗效果 */
+}
+
+#content {
+    background-color: #ffffff;
+    /* 设置护眼的背景色,这里使用米色(beige) */
+    padding: 10px;
+    /* 可选:添加一些内边距以改善外观 */
+}
+
+.emoji-container {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.emoji-container button {
+    font-size: 24px;
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
