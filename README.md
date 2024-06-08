@@ -59,7 +59,7 @@ location / {
 location ~* ^/notes/([a-zA-Z0-9_-]+)$ {
     try_files $uri /notes/index.php?note=$1;
 }
-
+```
 **Apache：**<br />如果你使用的是Apache，默认配置即可。
 
 
