@@ -7,14 +7,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: linear-gradient(-45deg, #f093fb, #f5576c, #4facfe, #00f2fe, #4facfe, #f093fb);
+            background-size: 600% 600%;
+            animation: gradientBG 20s ease infinite;
         }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .login-container {
             background-color: #fff;
             padding: 20px;
@@ -54,27 +69,45 @@
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="logo">记事本</div>
-        <div class="login-container">
-            <?php if (isset($error)): ?>
-            <div class="error">
-                <?php echo htmlspecialchars($error); ?>
+    <div class="login-container">
+        <h2>登录</h2>
+        <?php if (isset($error)): ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <div class="form-input">
+                <input type="password" id="password" name="password" placeholder="输入密码">
             </div>
-            <?php endif; ?>
-            <form method="post"  action="index.php">
-                <div class="form-input">
-                    <input type="password" id="password" name="password" placeholder="输入密码">
-                </div>
-                <div class="form-input">
-                    <button type="submit">登录</button>
-                </div>
-                <div class="remember-me-container">
-                    <input type="checkbox" name="remember_me" id="remember_me">
-                    <label for="remember_me">保持登录7天</label>
-                </div>
-            </form>
-        </div>
+            <div class="form-input">
+                <button type="submit">登录</button>
+            </div>
+        </form>
     </div>
+    
+<div class="footer">
+    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备XXXXXX号</a>
+</div>
+
+<style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer a {
+        color: #777;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+    
 </body>
+
 </html>
