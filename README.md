@@ -25,7 +25,7 @@ Ctrl+点击：<br />当你按下ctrl键点击某一行，如果该行存在URL�
 ## 本项目截图
 ![image](https://github.com/jocksliu/web-notepad-enhanced/assets/94985963/a3861aee-77b3-4236-86e1-8a3f87588d25)
 
-## ---------------------------安装-（Installation） 
+## ---------安装--------（Installation） 
 本项目依赖Apache或者Nginx+PHP环境，请自行在服务器上部署对应的环境，默认主机空间和宝塔基本环境以及常用的网站环境都能满足要求。
 为避免可能的错误，建议PHP7.2
 
