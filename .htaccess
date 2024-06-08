@@ -12,4 +12,4 @@ RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?note=$1
 # AuthType basic
 # AuthName "website.name"
 # AuthUserFile "/home/user/update-path-to.htpasswd"
-# Require valid-user
+# Require valid-user 
