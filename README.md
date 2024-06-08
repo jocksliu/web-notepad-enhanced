@@ -28,19 +28,16 @@
 
 ## 安装（Installation） 
 本项目依赖Apache或者Nginx+PHP环境，请自行在服务器上部署对应的环境，默认主机空间和宝塔基本环境以及常用的网站环境都能满足要求。
-为避免未测试的错误，建议PHP7.2
+为避免可能的错误，建议PHP7.2
 
-**步骤大纲（outline）：**<br />1、在Github上下载本项目代码<br />2、修改项目代码，把代码中的域名改成自己的域名（主要是index.php第十四行、file.php第八行）<br />3、将代码上传到自己的主机空间或者服务器网站目录<br />4、简单配置网站环境变量，如nginx的伪静态代码<br />
-
-### 详细部署教程（detailed steps）
-**下载代码**
+**步骤一：下载代码**
 使用以下命令下载，或者直接网页都可以下载。
 
 ```
 git clone https://github.com/jocksliu/web-notepad-enhanced.git
 ```
 
-**修改域名或IP**<br />
+**步骤二：修改域名或IP**<br />
 解压下载好的代码
 找到index.php文件，编辑该文件，在第14行把$base_url后面的值改成你自己部署的域名，或者直接写IP地址
 比如：$base_url = 'http://itdog.in';  或者 $base_url = 'http://192.168.1.1';
@@ -48,10 +45,10 @@ git clone https://github.com/jocksliu/web-notepad-enhanced.git
 找到file.php文件，编辑该文件，在第8行把$base_url后面的值改成你自己部署的域名，或者直接写IP地址
 比如：$base_url = 'http://itdog.in';  或者 $base_url = 'http://192.168.1.1';
 
-**上传代码到空间或者服务器**<br />
+**步骤三：上传代码到空间或者服务器**<br />
 将代码上传到你需要部署的空间或者服务器
 
-**修改Nginx伪静态**<br />
+**步骤四：修改Nginx伪静态**<br />
 在网站的Nginx伪静态中写入规则
 ```
 location / {
