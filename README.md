@@ -8,11 +8,6 @@
 ## 本项目截图
 ![image](https://github.com/jocksliu/web-notepad-enhanced/assets/94985963/a3861aee-77b3-4236-86e1-8a3f87588d25)
 
-
-![1695702632.png](https://jks-1251624037.cos.ap-nanjing.myqcloud.com/ocr-2022-8-9//1695702632.png#averageHue=%23f3f3f3&clientId=ueeba5647-94c9-4&from=paste&height=955&id=BKGJ0&originHeight=955&originWidth=1040&originalType=binary&ratio=1&rotation=0&showTitle=false&size=65833&status=done&style=none&taskId=uab89d637-9aef-41fc-9f50-131d8e71f04&title=&width=1040) 
-
-![1695702744.png](https://jks-1251624037.cos.ap-nanjing.myqcloud.com/ocr-2022-8-9//1695702744.png#averageHue=%23f3f3f3&clientId=ueeba5647-94c9-4&from=paste&height=955&id=BKGJ0&originHeight=955&originWidth=1040&originalType=binary&ratio=1&rotation=0&showTitle=false&size=65833&status=done&style=none&taskId=uab89d637-9aef-41fc-9f50-131d8e71f04&title=&width=1040) 
-
 ## **功能特性（functional characteristics）**
 
 **本项目地址：**[https://github.com/jocksliu/web-notepad-enhanced](https://github.com/jocksliu/web-notepad-enhanced)<br />**在线Demo：**[https://itdog.in](https://itdog.in)
@@ -38,37 +33,26 @@
 **步骤大纲（outline）：**<br />1、在Github上下载本项目代码<br />2、修改项目代码，把代码中的域名改成自己的域名（主要是index.php第十四行、file.php第八行）<br />3、将代码上传到自己的主机空间或者服务器网站目录<br />4、简单配置网站环境变量，如nginx的伪静态代码<br />
 
 ### 详细部署教程（detailed steps）
-**1、克隆或者下载项目代码到你的本地**
+**下载代码**
+使用以下命令下载，或者直接网页都可以下载。
+
 ```
 git clone https://github.com/jocksliu/web-notepad-enhanced.git
 ```
-或者<br />直接在Github项目页面中点击Code按钮，选择Download ZIP进行源代码下载。
 
-**2、修改项目代码（填写您的域名或者IP）**<br />将项目代码解压，找到以下三个文件，用记事本或者代码编辑器打开修改文件内容。<br />index.php<br />png.php<br />file.php<br />以下变量都在文件最开始的几行代码中，打开即可看到。将三个文件的$base_url后面的变量改成你自己的域名。<br />域名的解析不在本项目教程范围内，需要自己配置。如果无域名，可以直接配置成【http://IP地址】进行部署。
-```bash
-$base_url = 'http://itdog.in';
-改成
-$base_url = 'https://你的域名';
-//默认http，如果使用了SSL，则需要使用https
-```
+**修改域名或IP**<br />
+解压下载好的代码
+找到index.php文件，编辑该文件，在第14行把$base_url后面的值改成你自己部署的域名，或者直接写IP地址
+比如：$base_url = 'http://itdog.in';  或者 $base_url = 'http://192.168.1.1';
 
-**修改主页密码**
-<br />修改index.php文件的 
-```$password = 'xxx';```
-<br />把xxx改成你想要设置的密码；
-<br />
-<br />在v1.0.4之后的版本，使用了哈希值代替明文密码，逻辑一致，可以使用在线工具将你的密码转换成哈希值之后，填入以下字段
-<br />```$hashed_password = 'xxx';```
-<br /> 推荐的在线生成哈希值网站：https://uutool.cn/php-password/  或者 https://toolkk.com/tools/php-password-hash 或者其他自行百度谷歌 
+找到file.php文件，编辑该文件，在第8行把$base_url后面的值改成你自己部署的域名，或者直接写IP地址
+比如：$base_url = 'http://itdog.in';  或者 $base_url = 'http://192.168.1.1';
 
+**上传代码到空间或者服务器**<br />
+将代码上传到你需要部署的空间或者服务器
 
-
-**3、上传代码到网站根目录，确保配置。**<br />将修改好的代码全部上传到你的网站目录，然后确保一下配置正确，建议打包成zip后再上传解压。<br />以下配置大部分的主机空间和服务器环境都不需要专门配置，只需要检查即可。如有异常，请自行修改。
-
-- 确保你的主页文件设置为index.php
-- 确保本项目中的_tmp、_png、sharefile这三个文件夹可读可写
-
-**4、网站的环境变量**<br />**Nginx：**<br />如果你的网站使用的是nginx，请在伪静态配置里写入
+**修改Nginx伪静态**<br />
+在网站的Nginx伪静态中写入规则
 ```
 location / {
     rewrite ^/([a-zA-Z0-9_-]+)$ /index.php?note=$1;
@@ -79,9 +63,8 @@ location / {
 location ~* ^/notes/([a-zA-Z0-9_-]+)$ {
     try_files $uri /notes/index.php?note=$1;
 }
-```
 
-**Apache：**<br />如果你使用的是Apache，默认配置即可，<br />如有异常，需要确保在站点配置中启用mod_rewrite并设置.htaccess文件。参见如何为Apache设置mod_rewrite。[How To Set Up mod_rewrite for Apache](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04).
+**Apache：**<br />如果你使用的是Apache，默认配置即可。
 
 ## 许可证（licence）
 ```
