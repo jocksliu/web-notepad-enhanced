@@ -1,15 +1,17 @@
 <?php
+/* Minimalist Web Notepad | https://github.com/pereorga/minimalist-web-notepad */
 /* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
 /* https://github.com/jocksliu/web-notepad-enhanced  */
 /* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
 /* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
-$base_url = 'https://www.muv.cc';
+//  将域名改成自己的域名,注意http和HTTPS
+$base_url = 'https://itdog.in';
 
 include('qr.php'); 
 
 session_start();
 
-$correct_password = 'Admin';  // 这里设置你想要的密码
+#$correct_password = 'Admin';  // 这里设置你想要的密码,当前无密码
 $target_dir = "sharefile/";
 
 if (isset($_POST['password']) && $_POST['password'] === $correct_password) {
@@ -171,18 +173,7 @@ body {
     </ul>
 <div class="container">
     <h2>上传文件</h2>
-    <?php if (!isset($_SESSION['authenticated'])): ?>
-        <div class="alert alert-warning" role="alert">
-            请输入密码以解锁上传功能
-        </div>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="password" style="font-weight: bold;">密码:</label>
-                <input type="password" name="password" id="password" class="form-control" style="width: 200px;">
-            </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">解锁上传功能</button>
-        </form>
-    <?php else: ?>
+
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="fileToUpload" style="font-weight: bold;">选择文件:</label>
@@ -190,7 +181,6 @@ body {
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 10px;">上传文件</button>
         </form>
-    <?php endif; ?>
  
     <div class="progress" style="display: none;">
          <div class="progress-title">上传进度：</div>
@@ -352,8 +342,5 @@ function copyLink(file) {
 }
 </script>
 
-  <div class="floating-notice">
-    本网站提供公网访问，主要方便管理员和身边的人员使用，网站空间有限，当前限制最大单文件为1M，网站空间超过50M管理员自动清空，请注意保存。
-  </div>
 </body>
 </html>
