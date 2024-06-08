@@ -1,4 +1,4 @@
-/*<?php session_start(); // 启动会话
+<?php session_start(); // 启动会话
 // #$correct_password = '123'; // 在这里设置你的密码
 
 // if (isset($_POST['password'])) {
@@ -8,7 +8,7 @@
 //         exit; // 结束脚本执行
 //     }
 // }
-// ?>*/
+// ?>
 
 <!DOCTYPE html>
 <html>
