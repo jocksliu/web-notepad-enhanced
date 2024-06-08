@@ -1,42 +1,40 @@
 <?php
-/* 网络笔记本增强版! Web Notepad web-notepad-enhanced */
-/* https://github.com/jocksliu/web-notepad-enhanced  */
-/* 本项目源于原作者pereorga 的项目Minimalist Web Notepad上二次开发而来  本项目作者：jocksliu */
-/* 原仓库地址 https://github.com/pereorga/minimalist-web-notepad */
 $target_dir = "_png/";
 $imageFileType = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
 
-
+// 修改文件名为 [日期]-[随机4位数串码] 的格式
 $date = date('Ymd');
 $random = sprintf('%04d', rand(0, 9999));
 $target_file = $target_dir . $date . '-' . $random . '.' . $imageFileType;
 
-
+// 允许特定文件格式
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-    http_response_code(400); 
+    http_response_code(400); // 返回错误状态码
     echo "只允许上传 JPG, JPEG, PNG & GIF 格式的文件。";
     exit;
 }
 
+// 检查文件是否已经存在
 if (file_exists($target_file)) {
     http_response_code(400);
     echo "文件已存在。";
     exit;
 }
 
+// 尝试将文件移动到目标目录
 if (!move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-    http_response_code(500); 
+    http_response_code(500); // 返回错误状态码
     echo "上传文件时出现错误。";
     exit;
 }
 
-
-$thumbWidth = 200; 
+// 创建并保存缩略图
+$thumbWidth = 200; // 定义缩略图的宽度
 $thumbnail_file = $target_dir . 'thumbnails/' . $date . '-' . $random . '.' . $imageFileType;
 
 list($width, $height) = getimagesize($target_file);
 
-
+// 计算缩略图的高度
 $thumbHeight = $height * ($thumbWidth / $width);
 
 $newImg = imagecreatetruecolor($thumbWidth, $thumbHeight);
